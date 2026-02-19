@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Breanna Lu — Product Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream: #f0f4f9;
+            --warm-white: #ffffff;
+            --terracotta: #1d4ed8;
+            --terracotta-light: #3b82f6;
+            --terracotta-pale: #dbeafe;
+            --brown: #0f172a;
+            --brown-mid: #475569;
+            --brown-light: #94a3b8;
+            --sage: #2563eb;
+            --sage-light: #bfdbfe;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+        html { scroll-behavior: smooth; }
+        body { background: #f0f4f9; color: var(--brown); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        nav { padding: 1.5rem 0; position: sticky; top: 0; background: rgba(240, 244, 249, 0.8); backdrop-filter: blur(10px); z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--terracotta); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--brown-mid); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--terracotta); }
+        header { padding: 6rem 0 4rem; }
+        .hero { max-width: 800px; }
+        .badge { display: inline-block; padding: 0.5rem 1rem; background: var(--terracotta-pale); color: var(--terracotta); border-radius: 2rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+        h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; font-weight: 700; color: var(--brown); margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+        .hero-desc { font-size: 1.25rem; color: var(--brown-mid); max-width: 600px; margin-bottom: 2.5rem; }
+        .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 1rem 2rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
+        .btn-primary { background: var(--terracotta); color: white; box-shadow: 0 4px 14px rgba(29, 78, 216, 0.2); }
+        .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3); }
+        .btn-secondary { border: 2px solid var(--terracotta); color: var(--terracotta); }
+        .btn-secondary:hover { background: var(--terracotta-pale); transform: translateY(-2px); }
+        .section-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 40px; height: 3px; background: var(--terracotta); border-radius: 2px; }
+        .work { padding: 6rem 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .card { background: var(--warm-white); border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .card-img { height: 240px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: 700; background-size: cover; background-position: center; }
+        .card-content { padding: 2rem; }
+        .card-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--terracotta); margin-bottom: 0.75rem; display: block; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--brown); }
+        .card p { color: var(--brown-mid); margin-bottom: 1.5rem; font-size: 1rem; }
+        .card-link { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--brown); font-weight: 600; font-size: 0.9rem; }
+        .card-link::after { content: '→'; transition: transform 0.3s ease; }
+        .card-link:hover::after { transform: translateX(5px); }
+        footer { padding: 4rem 0; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; color: var(--brown-light); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">BL.</a>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="mailto:breannaxxl@example.com">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <div class="hero">
+                <span class="badge">Available for new opportunities</span>
+                <h1>Breanna Lu</h1>
+                <p class="hero-desc">Product Marketing Manager specializing in growth, lifecycle, and customer-centric storytelling.</p>
+                <div class="cta-group">
+                    <a href="#work" class="btn btn-primary">View Projects</a>
+                    <a href="mailto:breannaxxl@example.com" class="btn btn-secondary">Get in touch</a>
+                </div>
+            </div>
+        </header>
+        <section id="work" class="work">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6);">BL</div>
+                    <div class="card-content">
+                        <span class="card-tag">Growth Strategy</span>
+                        <h3>Market Expansion Project</h3>
+                        <p>Driving user acquisition through targeted content and cross-functional leadership.</p>
+                        <a href="#" class="card-link">View Case Study</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(135deg, #0f172a, #475569);">PL</div>
+                    <div class="card-content">
+                        <span class="card-tag">Lifecycle</span>
+                        <h3>User Retention Campaign</h3>
+                        <p>Optimizing email journeys and in-app messaging to decrease churn by 15%.</p>
+                        <a href="#" class="card-link">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Breanna Lu. Built with care.</p>
+        </div>
+    </footer>
+</body>
+</html>
